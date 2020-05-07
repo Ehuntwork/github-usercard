@@ -3,7 +3,8 @@
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
-
+let x = axios.get('https://api.github.com/users/Ehuntwork')
+console.log(x)
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
     github info! You will need to understand the structure of this
@@ -49,7 +50,44 @@ const followersArray = [];
       </div>
     </div>
 */
+function cardmaker(obj){
+  let cardDiv = document.createElement('div')
+  cardDiv.classList.add('card')
 
+  let profileImg = document.createElement('img')
+  cardDiv.appendChild(profileImg)
+
+  let cardInfoDiv = document.createElement('div')
+  cardInfoDiv.classList.add('card-info')
+  cardDiv.appendChild(cardInfoDiv)
+
+  let nameH3 = document.createElement('h3')
+  nameH3.classList.add('name')
+  cardInfoDiv.appendChild(nameH3)
+
+  let usernameP = document.createElement('p')
+  usernameP.classList.add('username')
+  cardInfoDiv.appendChild(usernameP)
+
+  let locationP = document.createElement('p')
+  cardInfoDiv.appendChild(locationP)
+
+  let profileP = document.createElement('p')
+  cardInfoDiv.appendChild(profileP)
+
+  let followersP = document.createElement('p')
+  cardInfoDiv.appendChild(followersP)
+
+  let followingP = document.createElement('p')
+  cardInfoDiv.appendChild(followingP)
+  
+  let bioP = document.createElement('p')
+  cardInfoDiv.appendChild(bioP)
+
+  return cardDiv;
+}
+
+console.log(cardmaker())
 /*
   List of LS Instructors Github username's:
     tetondan
